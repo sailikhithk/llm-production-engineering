@@ -1,0 +1,33 @@
+# Sample price table for cost_tracker.
+# Prices are USD per 1K tokens. Update when providers announce changes.
+# Each model has a list of prices with effective dates for versioning.
+
+gpt-4o:
+  - input_per_1k: 0.005
+    output_per_1k: 0.015
+    cached_per_1k: 0.0025
+    effective_date: "2024-05-13T00:00:00+00:00"
+  - input_per_1k: 0.0025
+    output_per_1k: 0.010
+    cached_per_1k: 0.00125
+    effective_date: "2024-10-01T00:00:00+00:00"
+
+gpt-4o-mini:
+  - input_per_1k: 0.00015
+    output_per_1k: 0.0006
+    cached_per_1k: 0.000075
+    effective_date: "2024-07-18T00:00:00+00:00"
+
+claude-3-5-sonnet:
+  - input_per_1k: 0.003
+    output_per_1k: 0.015
+    cached_per_1k: 0.0003
+    effective_date: "2024-06-20T00:00:00+00:00"
+
+# Self-hosted vLLM models - cost is GPU amortization, not per-token.
+# Set to 0 for tracking purposes; track GPU-hours separately.
+llama-3.1-70b-vllm:
+  - input_per_1k: 0.0
+    output_per_1k: 0.0
+    cached_per_1k: 0.0
+    effective_date: "2024-07-23T00:00:00+00:00"
