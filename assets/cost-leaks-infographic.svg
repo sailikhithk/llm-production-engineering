@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f6f8fa"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#cf222e"/>
+      <stop offset="100%" stop-color="#a40e26"/>
+    </linearGradient>
+    <linearGradient id="bar2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#bc4c00"/>
+      <stop offset="100%" stop-color="#8a3600"/>
+    </linearGradient>
+    <linearGradient id="bar3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#bf8700"/>
+      <stop offset="100%" stop-color="#7d4e00"/>
+    </linearGradient>
+    <linearGradient id="bar4" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8250df"/>
+      <stop offset="100%" stop-color="#6639ba"/>
+    </linearGradient>
+    <linearGradient id="bar5" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#bf3989"/>
+      <stop offset="100%" stop-color="#8a2c66"/>
+    </linearGradient>
+    <linearGradient id="totalBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0969da"/>
+      <stop offset="100%" stop-color="#0550ae"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1080" height="1350" fill="url(#bg)"/>
+
+  <!-- Header -->
+  <text x="540" y="90" font-family="SF Mono, Monaco, Consolas, monospace" font-size="22" fill="#57606a" text-anchor="middle" letter-spacing="3">LLM PRODUCTION ENGINEERING</text>
+  <text x="540" y="155" font-family="-apple-system, SF Pro Display, Helvetica, Arial, sans-serif" font-size="52" font-weight="700" fill="#1f2328" text-anchor="middle">How $1 becomes $10</text>
+  <text x="540" y="200" font-family="-apple-system, SF Pro Display, Helvetica, Arial, sans-serif" font-size="24" fill="#57606a" text-anchor="middle">The 5 cost leaks nobody tracks until finance asks</text>
+
+  <!-- Divider -->
+  <line x1="140" y1="235" x2="940" y2="235" stroke="#d0d7de" stroke-width="1"/>
+
+  <!-- Base cost row -->
+  <text x="140" y="290" font-family="SF Mono, Monaco, Consolas, monospace" font-size="20" fill="#57606a">BASE</text>
+  <text x="940" y="290" font-family="SF Mono, Monaco, Consolas, monospace" font-size="28" fill="#1f2328" text-anchor="end" font-weight="600">$1.00</text>
+  <text x="140" y="320" font-family="-apple-system, Helvetica, sans-serif" font-size="18" fill="#6e7781">intended per-token spend</text>
+  <rect x="140" y="340" width="800" height="6" fill="#eaeef2" rx="3"/>
+  <rect x="140" y="340" width="80" height="6" fill="#0969da" rx="3"/>
+
+  <!-- Trap 1: Prompt bloat -->
+  <text x="140" y="410" font-family="SF Mono, Monaco, Consolas, monospace" font-size="18" fill="#cf222e" font-weight="600">+1.5x</text>
+  <text x="940" y="410" font-family="SF Mono, Monaco, Consolas, monospace" font-size="22" fill="#cf222e" text-anchor="end">+$0.50</text>
+  <text x="140" y="440" font-family="-apple-system, Helvetica, sans-serif" font-size="22" fill="#1f2328" font-weight="600">Prompt template bloat</text>
+  <text x="140" y="468" font-family="-apple-system, Helvetica, sans-serif" font-size="16" fill="#57606a">2K-token context added "just in case"</text>
+  <text x="140" y="490" font-family="-apple-system, Helvetica, sans-serif" font-size="16" fill="#57606a">$200/day waste at 10K req/day</text>
+  <rect x="140" y="510" width="800" height="8" fill="#eaeef2" rx="4"/>
+  <rect x="140" y="510" width="120" height="8" fill="url(#bar1)" rx="4"/>
+
+  <!-- Trap 2: Silent fallback -->
+  <text x="140" y="565" font-family="SF Mono, Monaco, Consolas, monospace" font-size="18" fill="#bc4c00" font-weight="600">+2.0x</text>
+  <text x="940" y="565" font-family="SF Mono, Monaco, Consolas, monospace" font-size="22" fill="#bc4c00" text-anchor="end">+$1.50</text>
+  <text x="140" y="595" font-family="-apple-system, Helvetica, sans-serif" font-size="22" fill="#1f2328" font-weight="600">Silent fallback to expensive model</text>
+  <text x="140" y="623" font-family="-apple-system, Helvetica, sans-serif" font-size="16" fill="#57606a">cheap model down 1hr, all traffic to GPT-4</text>
+  <text x="140" y="645" font-family="-apple-system, Helvetica, sans-serif" font-size="16" fill="#57606a">spend spikes 5-10x for outage duration</text>
+  <rect x="140" y="665" width="800" height="8" fill="#eaeef2" rx="4"/>
+  <rect x="140" y="665" width="160" height="8" fill="url(#bar2)" rx="4"/>
+
+  <!-- Trap 3: Cache miss storm -->
+  <text x="140" y="720" font-family="SF Mono, Monaco, Consolas, monospace" font-size="18" fill="#7d4e00" font-weight="600">+2.5x</text>
+  <text x="940" y="720" font-family="SF Mono, Monaco, Consolas, monospace" font-size="22" fill="#7d4e00" text-anchor="end">+$2.50</text>
+  <text x="140" y="750" font-family="-apple-system, Helvetica, sans-serif" font-size="22" fill="#1f2328" font-weight="600">Cache miss storm</text>
+  <text x="140" y="778" font-family="-apple-system, Helvetica, sans-serif" font-size="16" fill="#57606a">timestamp added to system prompt</text>
+  <text x="140" y="800" font-family="-apple-system, Helvetica, sans-serif" font-size="16" fill="#57606a">hit rate 60% to 0%, input cost jumps 2.5x</text>
+  <rect x="140" y="820" width="800" height="8" fill="#eaeef2" rx="4"/>
+  <rect x="140" y="820" width="200" height="8" fill="url(#bar3)" rx="4"/>
+
+  <!-- Trap 4: Multi-turn explosion -->
+  <text x="140" y="875" font-family="SF Mono, Monaco, Consolas, monospace" font-size="18" fill="#8250df" font-weight="600">+3.0x</text>
+  <text x="940" y="875" font-family="SF Mono, Monaco, Consolas, monospace" font-size="22" fill="#8250df" text-anchor="end">+$3.00</text>
+  <text x="140" y="905" font-family="-apple-system, Helvetica, sans-serif" font-size="22" fill="#1f2328" font-weight="600">Multi-turn explosion</text>
+  <text x="140" y="933" font-family="-apple-system, Helvetica, sans-serif" font-size="16" fill="#57606a">bug triggers multi-turn where single expected</text>
+  <text x="140" y="955" font-family="-apple-system, Helvetica, sans-serif" font-size="16" fill="#57606a">5-turn convo costs 15x single-turn</text>
+  <rect x="140" y="975" width="800" height="8" fill="#eaeef2" rx="4"/>
+  <rect x="140" y="975" width="240" height="8" fill="url(#bar4)" rx="4"/>
+
+  <!-- Trap 5: Truncation retry -->
+  <text x="140" y="1030" font-family="SF Mono, Monaco, Consolas, monospace" font-size="18" fill="#bf3989" font-weight="600">+1.0x</text>
+  <text x="940" y="1030" font-family="SF Mono, Monaco, Consolas, monospace" font-size="22" fill="#bf3989" text-anchor="end">+$1.50</text>
+  <text x="140" y="1060" font-family="-apple-system, Helvetica, sans-serif" font-size="22" fill="#1f2328" font-weight="600">Streaming truncation retry</text>
+  <text x="140" y="1088" font-family="-apple-system, Helvetica, sans-serif" font-size="16" fill="#57606a">finish_reason: length, user retries</text>
+  <text x="140" y="1110" font-family="-apple-system, Helvetica, sans-serif" font-size="16" fill="#57606a">truncated calls still bill, double cost</text>
+  <rect x="140" y="1130" width="800" height="8" fill="#eaeef2" rx="4"/>
+  <rect x="140" y="1130" width="120" height="8" fill="url(#bar5)" rx="4"/>
+
+  <!-- Total -->
+  <line x1="140" y1="1180" x2="940" y2="1180" stroke="#d0d7de" stroke-width="1"/>
+  <text x="140" y="1230" font-family="SF Mono, Monaco, Consolas, monospace" font-size="20" fill="#57606a" letter-spacing="2">ACTUAL BILL</text>
+  <text x="940" y="1230" font-family="SF Mono, Monaco, Consolas, monospace" font-size="48" fill="#0969da" text-anchor="end" font-weight="700">$10.00</text>
+  <rect x="140" y="1250" width="800" height="12" fill="url(#totalBar)" rx="6"/>
+
+  <!-- Footer -->
+  <text x="540" y="1305" font-family="-apple-system, Helvetica, sans-serif" font-size="16" fill="#6e7781" text-anchor="middle">10x spend. 0 alerts. Finance finds it first.</text>
+  <text x="540" y="1330" font-family="SF Mono, Monaco, Consolas, monospace" font-size="13" fill="#8c959f" text-anchor="middle">github.com/sailikhithk/llm-production-engineering</text>
+</svg>
