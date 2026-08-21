@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="280" viewBox="0 0 1200 280">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0e1a"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="280" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="4" fill="url(#accent)"/>
+  <text x="60" y="90" font-family="system-ui, -apple-system, sans-serif" font-size="38" font-weight="700" fill="#f8fafc">LLM Production Engineering</text>
+  <text x="60" y="135" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="#94a3b8">Field notes from building AI systems in production since 2019</text>
+  <g transform="translate(60, 170)"><rect x="0" y="0" width="68" height="28" rx="4" fill="#1e293b" stroke="#334155"/>
+<text x="34" y="18" font-family="monospace" font-size="12" fill="#06b6d4" text-anchor="middle">Python</text>
+<rect x="78" y="0" width="92" height="28" rx="4" fill="#1e293b" stroke="#334155"/>
+<text x="124" y="18" font-family="monospace" font-size="12" fill="#06b6d4" text-anchor="middle">LangChain</text>
+<rect x="180" y="0" width="52" height="28" rx="4" fill="#1e293b" stroke="#334155"/>
+<text x="206" y="18" font-family="monospace" font-size="12" fill="#06b6d4" text-anchor="middle">vLLM</text>
+<rect x="242" y="0" width="76" height="28" rx="4" fill="#1e293b" stroke="#334155"/>
+<text x="280" y="18" font-family="monospace" font-size="12" fill="#06b6d4" text-anchor="middle">Bedrock</text>
+<rect x="328" y="0" width="52" height="28" rx="4" fill="#1e293b" stroke="#334155"/>
+<text x="354" y="18" font-family="monospace" font-size="12" fill="#06b6d4" text-anchor="middle">OTel</text>
+<rect x="390" y="0" width="124" height="28" rx="4" fill="#1e293b" stroke="#334155"/>
+<text x="452" y="18" font-family="monospace" font-size="12" fill="#06b6d4" text-anchor="middle">Cost Tracking</text>
+</g>
+  <text x="60" y="235" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#64748b">Sai Likhith Kanuparthi - Senior AI Infrastructure &amp; Systems Engineer</text>
+  <text x="60" y="255" font-family="monospace" font-size="12" fill="#475569">github.com/sailikhithk  |  linkedin.com/in/sailikhithk  |  sailikhith.me</text>
+</svg>
