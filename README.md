@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.svg" alt="LLM Production Engineering - Field notes from building AI systems in production" width="100%">
+</p>
+
 # LLM Production Engineering
 
 > Field notes from building AI systems in production since 2019 - from
@@ -97,3 +101,29 @@ AI, currently building LLM serving infrastructure at Airbnb.
 I am documenting the development of this repo in a weekly LinkedIn series
 under `#BuildingInPublic #MLEngineering #LLMOps`. Each section ships with a
 companion post that covers the key lesson.
+
+---
+
+## About the author
+
+**Sai Likhith Kanuparthi** is a Senior AI Infrastructure & Systems Engineer
+at Airbnb, building production GenAI platforms with 30+ foundation model
+integrations. 7+ years shipping production AI systems at Airbnb, Southwest
+Airlines, Shell, Eli Lilly, and Oracle. MS Computer Science from NYU.
+
+- **GitHub:** [github.com/sailikhithk](https://github.com/sailikhithk)
+- **LinkedIn:** [linkedin.com/in/sailikhithk](https://www.linkedin.com/in/sailikhithk)
+- **Portfolio:** [sailikhith.me](https://sailikhith.me)
+- **Other open-source projects:**
+  - [Synthetic-AI-Image-Detector](https://github.com/sailikhithk/Synthetic-AI-Image-Detector) - Multi-signal deepfake detection with calibration
+  - [mamba-from-scratch](https://github.com/sailikhithk/mamba-from-scratch) - S4, Mamba-1, Mamba-2 in pure PyTorch
+
+---
+
+## Keywords
+
+`Sai Likhith Kanuparthi` `LLM Production Engineering` `LLM serving` `vLLM`
+`AWS Bedrock` `OpenAI` `Anthropic Claude` `cost tracking` `token attribution`
+`OpenTelemetry` `MLOps` `LLM observability` `capacity planning`
+`eval-driven deployment` `incident playbooks` `production AI` `Python`
+
