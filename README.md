@@ -40,6 +40,18 @@ Cost and eval feed into deployment decisions; capacity and observability keep
 the system alive; incident playbooks handle the failures; decision frameworks
 and engine tradeoffs guide architecture choices:
 
+<p align="center">
+  <img src="assets/lifecycle.svg" alt="LLM Production Engineering lifecycle: cost tracking, eval-driven deploy, capacity planning, observability, and incident playbooks" width="100%">
+</p>
+
+### Cost attribution patterns
+
+Production teams need cost tracking at multiple levels of granularity. Each pattern has different tradeoffs:
+
+<p align="center">
+  <img src="assets/cost-tracking-patterns.svg" alt="LLM cost tracking patterns: per request, per user, per team, and per product attribution" width="100%">
+</p>
+
 ```mermaid
 flowchart TD
     subgraph MEASURE["Measure"]

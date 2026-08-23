@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="100%" height="auto" role="img" aria-label="LLM production cost tracking patterns: per request, per user, per team, and per product attribution">
+  <style>
+    .title { font-family: -apple-system, Segoe UI, Helvetica, sans-serif; font-size: 22px; font-weight: 700; fill: #0f172a; text-anchor: middle; }
+    .subtitle { font-family: -apple-system, Segoe UI, Helvetica, sans-serif; font-size: 12px; fill: #475569; text-anchor: middle; }
+    .card-label { font-family: -apple-system, Segoe UI, Helvetica, sans-serif; font-size: 13px; font-weight: 600; fill: #1e293b; text-anchor: middle; }
+    .card-desc { font-family: -apple-system, Segoe UI, Helvetica, sans-serif; font-size: 11px; fill: #475569; }
+    .bullet { font-family: -apple-system, Segoe UI, Helvetica, sans-serif; font-size: 10px; fill: #64748b; }
+    .bestfor { font-family: -apple-system, Segoe UI, Helvetica, sans-serif; font-size: 10px; font-weight: 600; fill: #1e293b; }
+    .number { font-family: -apple-system, Segoe UI, Helvetica, sans-serif; font-size: 16px; font-weight: 700; }
+    @media (prefers-color-scheme: dark) {
+      .title { fill: #f1f5f9; }
+      .subtitle { fill: #94a3b8; }
+      .card-label { fill: #e2e8f0; }
+      .card-desc { fill: #cbd5e1; }
+      .bullet { fill: #94a3b8; }
+      .bestfor { fill: #e2e8f0; }
+    }
+  </style>
+
+  <text x="440" y="32" class="title">LLM Cost Tracking Patterns</text>
+  <text x="440" y="52" class="subtitle">4 attribution models to stop cloud bill surprises</text>
+
+  <!-- Card 1: Per Request -->
+  <rect x="20" y="75" width="200" height="380" rx="12" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+  <circle cx="70" cy="108" r="15" fill="#22c55e"/>
+  <text x="70" y="114" class="number" fill="#fff" text-anchor="middle">1</text>
+  <text x="120" y="114" class="card-label" text-anchor="start">Per Request</text>
+  <text x="35" y="138" class="card-desc">Charge back each prompt + completion by provider and model.</text>
+
+  <rect x="45" y="160" width="150" height="80" rx="6" fill="#dcfce7" stroke="#86efac"/>
+  <text x="120" y="180" class="card-desc" text-anchor="middle" font-size="10" font-weight="600">$0.0042</text>
+  <text x="120" y="198" class="card-desc" text-anchor="middle" font-size="9">GPT-4o mini</text>
+  <text x="120" y="218" class="card-desc" text-anchor="middle" font-size="9">prompt: 1.2k tokens</text>
+  <text x="120" y="233" class="card-desc" text-anchor="middle" font-size="9">completion: 0.8k tokens</text>
+
+  <text x="35" y="280" class="bullet">• Granular, provider-native</text>
+  <text x="35" y="300" class="bullet">• Maps to invoice line items</text>
+  <text x="35" y="320" class="bullet">• Hard to group by feature</text>
+
+  <rect x="35" y="350" width="170" height="80" rx="6" fill="#dcfce7" stroke="#bbf7d0"/>
+  <text x="120" y="370" class="bestfor" text-anchor="middle">Best for</text>
+  <text x="120" y="390" class="bullet" text-anchor="middle">Reconciling against</text>
+  <text x="120" y="405" class="bullet" text-anchor="middle">provider invoices and</text>
+  <text x="120" y="420" class="bullet" text-anchor="middle">spotting model drift</text>
+
+  <!-- Card 2: Per User -->
+  <rect x="230" y="75" width="200" height="380" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+  <circle cx="280" cy="108" r="15" fill="#3b82f6"/>
+  <text x="280" y="114" class="number" fill="#fff" text-anchor="middle">2</text>
+  <text x="330" y="114" class="card-label" text-anchor="start">Per User</text>
+  <text x="245" y="138" class="card-desc">Track token spend per user_id across all their sessions.</text>
+
+  <rect x="255" y="160" width="150" height="80" rx="6" fill="#dbeafe" stroke="#93c5fd"/>
+  <circle cx="330" cy="178" r="12" fill="#3b82f6" opacity="0.2"/>
+  <text x="330" y="183" class="card-desc" text-anchor="middle" font-size="10" font-weight="600" fill="#1d4ed8">User A</text>
+  <text x="330" y="203" class="card-desc" text-anchor="middle" font-size="9">sessions: 47</text>
+  <text x="330" y="218" class="card-desc" text-anchor="middle" font-size="9">requests: 1,240</text>
+  <text x="330" y="233" class="card-desc" text-anchor="middle" font-size="9" font-weight="600" fill="#1d4ed8">$18.50 this month</text>
+
+  <text x="245" y="280" class="bullet">• Ties spend to usage limits</text>
+  <text x="245" y="300" class="bullet">• Shows power users</text>
+  <text x="245" y="320" class="bullet">• Needs identity context</text>
+
+  <rect x="245" y="350" width="170" height="80" rx="6" fill="#dbeafe" stroke="#bfdbfe"/>
+  <text x="330" y="370" class="bestfor" text-anchor="middle">Best for</text>
+  <text x="330" y="390" class="bullet" text-anchor="middle">Consumer / SaaS apps</text>
+  <text x="330" y="405" class="bullet" text-anchor="middle">with usage quotas and</text>
+  <text x="330" y="420" class="bullet" text-anchor="middle">rate limiting</text>
+
+  <!-- Card 3: Per Team -->
+  <rect x="440" y="75" width="200" height="380" rx="12" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+  <circle cx="490" cy="108" r="15" fill="#f59e0b"/>
+  <text x="490" y="114" class="number" fill="#fff" text-anchor="middle">3</text>
+  <text x="540" y="114" class="card-label" text-anchor="start">Per Team</text>
+  <text x="455" y="138" class="card-desc">Attribute spend by org unit or cost center label.</text>
+
+  <rect x="465" y="160" width="150" height="80" rx="6" fill="#fef3c7" stroke="#fcd34d"/>
+  <rect x="475" y="175" width="130" height="22" rx="3" fill="#fbbf24" opacity="0.3"/>
+  <text x="540" y="191" class="card-desc" text-anchor="middle" font-size="10" font-weight="600" fill="#92400e">team: Search AI</text>
+  <rect x="475" y="202" width="90" height="22" rx="3" fill="#fbbf24" opacity="0.5"/>
+  <text x="520" y="218" class="card-desc" text-anchor="middle" font-size="10" font-weight="600" fill="#92400e">team: Fraud</text>
+  <rect x="475" y="230" width="110" height="22" rx="3" fill="#fbbf24" opacity="0.7"/>
+  <text x="530" y="246" class="card-desc" text-anchor="middle" font-size="10" font-weight="600" fill="#92400e">team: Support</text>
+
+  <text x="455" y="280" class="bullet">• Aligns with FinOps</text>
+  <text x="455" y="300" class="bullet">• Shows product ROI</text>
+  <text x="455" y="320" class="bullet">• Requires label hygiene</text>
+
+  <rect x="455" y="350" width="170" height="80" rx="6" fill="#fef3c7" stroke="#fde68a"/>
+  <text x="540" y="370" class="bestfor" text-anchor="middle">Best for</text>
+  <text x="540" y="390" class="bullet" text-anchor="middle">Internal platform</text>
+  <text x="540" y="405" class="bullet" text-anchor="middle">teams sharing one</text>
+  <text x="540" y="420" class="bullet" text-anchor="middle">LLM infrastructure bill</text>
+
+  <!-- Card 4: Per Product -->
+  <rect x="650" y="75" width="200" height="380" rx="12" fill="#fdf2f8" stroke="#ec4899" stroke-width="2"/>
+  <circle cx="700" cy="108" r="15" fill="#ec4899"/>
+  <text x="700" y="114" class="number" fill="#fff" text-anchor="middle">4</text>
+  <text x="750" y="114" class="card-label" text-anchor="start">Per Product</text>
+  <text x="665" y="138" class="card-desc">Roll up spend by product feature or release tag.</text>
+
+  <rect x="675" y="160" width="150" height="80" rx="6" fill="#fce7f3" stroke="#f9a8d4"/>
+  <text x="750" y="182" class="card-desc" text-anchor="middle" font-size="10" font-weight="600" fill="#be185d">Virtual Analyst</text>
+  <text x="750" y="200" class="card-desc" text-anchor="middle" font-size="9">feature: sql-agent</text>
+  <text x="750" y="215" class="card-desc" text-anchor="middle" font-size="9">version: v2.3.1</text>
+  <text x="750" y="233" class="card-desc" text-anchor="middle" font-size="9" font-weight="600" fill="#be185d">$4,120 this week</text>
+
+  <text x="665" y="280" class="bullet">• Links cost to features</text>
+  <text x="665" y="300" class="bullet">• Drives margin decisions</text>
+  <text x="665" y="320" class="bullet">• Hardest to instrument</text>
+
+  <rect x="665" y="350" width="170" height="80" rx="6" fill="#fce7f3" stroke="#fbcfe8"/>
+  <text x="750" y="370" class="bestfor" text-anchor="middle">Best for</text>
+  <text x="750" y="390" class="bullet" text-anchor="middle">Multi-product AI</text>
+  <text x="750" y="405" class="bullet" text-anchor="middle">platforms at scale</text>
+  <text x="750" y="420" class="bullet" text-anchor="middle">(Airbnb use case)</text>
+
+  <text x="440" y="490" class="subtitle">Most production systems combine all 4 to roll up from request -> user -> team -> product.</text>
+</svg>
