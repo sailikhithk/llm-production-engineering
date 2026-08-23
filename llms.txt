@@ -1,0 +1,50 @@
+# llm-production-engineering
+
+> Field notes from building AI systems in production since 2019. The ops side of LLM serving: cost tracking, eval-driven deployment, capacity planning, observability, incident playbooks, and decision frameworks.
+> Source: https://github.com/sailikhithk/llm-production-engineering
+
+Most LLM inference content explains how the systems work: PagedAttention internals, quantization algorithms, attention variants. This repo covers the other half: how to run them in production. Track cost per token, catch quality drift before users do, plan capacity, survive preemption storms, and pick the right engine for your workload.
+
+## Sections
+
+- [01-cost-tracking](docs/01-cost-tracking/): Per-token cost attribution, budget enforcement, chargeback
+- [02-eval-driven-deployment](docs/02-eval-driven-deployment/): Quality drift detection, golden-set regression, canary deploys
+- [03-capacity-planning](docs/03-capacity-planning/): Sizing LLM serving, autoscaling, GPU allocation math
+- [04-observability](docs/04-observability/): TTFT, ITL, SLOs, OTel signals for LLM serving
+- [05-incident-playbooks](docs/05-incident-playbooks/): Preemption storms, GPU failure, KV cache pressure, cold start spikes
+- [06-decision-framework](docs/06-decision-framework/): Engine, quantization, and config selection decision trees
+- [07-engine-tradeoffs](docs/07-engine-tradeoffs/): vLLM vs SGLang vs TensorRT-LLM vs llama.cpp production matrix
+
+## Reference code
+
+- [code/cost_tracker/](code/cost_tracker/): OpenTelemetry-based per-token cost tracking reference impl
+- [code/eval_harness/](code/eval_harness/): Golden-set regression harness for LLM quality drift
+- [code/capacity_calculator/](code/capacity_calculator/): LLM serving sizing script (GPU count, KV cache budget)
+
+## Why this repo exists
+
+The gap this repo fills: there is plenty of content explaining how PagedAttention works or how AWQ quantizes weights, but almost nothing explaining how to track cost per token across 30+ models, catch quality drift before users complain, size GPU capacity for 100x traffic variance, handle vLLM preemption storms at 3am, or decide between vLLM, SGLang, and TensorRT-LLM. Every recommendation comes from running these systems under real traffic.
+
+## Other AI/ML work by Sai Likhith Kanuparthi
+
+- [facadedriver](https://github.com/sailikhithk/facadedriver) - Model-agnostic orchestration for multi-LLM production systems: routing, retry, fallback, circuit breakers, per-request telemetry.
+- [mamba-from-scratch](https://github.com/sailikhithk/mamba-from-scratch) - From-scratch S4, Mamba-1 (S6), Mamba-2 (SSD) state-space models in pure PyTorch.
+- [Synthetic-AI-Image-Detector](https://github.com/sailikhithk/Synthetic-AI-Image-Detector) - Multi-signal deepfake detection with calibration, uncertainty quantification, and cross-generator eval.
+- [alzheimers-drug-discovery-demo](https://github.com/sailikhithk/alzheimers-drug-discovery-demo) - QSAR machine learning for Alzheimer's drug discovery: predict bioactivity against Beta-amyloid A4 protein.
+- [Project-X](https://github.com/sailikhithk/Project-X) - AI-based video interview platform with automated analysis.
+- [Tags-recommender-system-for-community-forums](https://github.com/sailikhithk/Tags-recommender-system-for-community-forums) - NLP multi-label tag recommender with TF-IDF, neural networks, and active learning.
+- [CreditCardFraudDetectionUsingKafka](https://github.com/sailikhithk/CreditCardFraudDetectionUsingKafka) - Real-time fraud detection with Kafka, Spark EMR, and AWS Lambda.
+
+## Author
+
+Sai Likhith Kanuparthi - Senior AI Infrastructure & Systems Engineer.
+7+ years shipping production AI systems at Airbnb, Southwest Airlines, Shell,
+Eli Lilly, and Oracle. MS Computer Science from NYU.
+
+- GitHub: https://github.com/sailikhithk
+- LinkedIn: https://www.linkedin.com/in/sailikhithk
+- Portfolio: https://sailikhith.me
+
+## License
+
+MIT
