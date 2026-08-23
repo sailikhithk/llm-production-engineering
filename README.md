@@ -29,6 +29,63 @@ official docs first. Come back here when you have to run it for real.
 
 ## What is in here
 
+### Architecture
+
+The seven sections map to the lifecycle of running LLM serving in production.
+Cost and eval feed into deployment decisions; capacity and observability keep
+the system alive; incident playbooks handle the failures; decision frameworks
+and engine tradeoffs guide architecture choices:
+
+```mermaid
+flowchart TD
+    subgraph MEASURE["Measure"]
+        COST["01 Cost Tracking\nPer-token attribution\nBudget enforcement"]
+        EVAL["02 Eval-Driven Deploy\nQuality drift detection\nGolden-set regression"]
+    end
+
+    subgraph RUN["Run"]
+        CAP["03 Capacity Planning\nGPU sizing\nAutoscaling math"]
+        OBS["04 Observability\nTTFT, ITL, SLOs\nOTel signals"]
+        INC["05 Incident Playbooks\nPreemption storms\nKV cache pressure"]
+    end
+
+    subgraph DECIDE["Decide"]
+        DEC["06 Decision Framework\nEngine selection\nQuantization choice"]
+        ENG["07 Engine Tradeoffs\nvLLM vs SGLang\nvs TRT-LLM vs llama.cpp"]
+    end
+
+    COST --> DEC
+    EVAL --> DEC
+    CAP --> OBS
+    OBS --> INC
+    INC --> DEC
+    DEC --> ENG
+    ENG --> COST
+
+    style MEASURE fill:#0f3460,stroke:#e94560,color:#fff
+    style RUN fill:#16213e,stroke:#e94560,color:#fff
+    style DECIDE fill:#1a1a2e,stroke:#e94560,color:#fff
+```
+
+Reference implementations under `code/`:
+
+```mermaid
+flowchart LR
+    REQ["LLM Request"] --> TRACK["cost_tracker\nOTel per-token\nattribution"]
+    TRACK --> SERVE["Serving Engine\n(vLLM / SGLang / TRT-LLM)"]
+    SERVE --> RESP["LLM Response"]
+    RESP --> EVALH["eval_harness\nGolden-set regression\nQuality drift check"]
+    EVALH --> GATE{"Pass?"}
+    GATE -->|Yes| DEPLOY["Promote canary"]
+    GATE -->|No| ROLL["Rollback + alert"]
+    SERVE --> CALC["capacity_calculator\nGPU count\nKV cache budget"]
+
+    style TRACK fill:#0f3460,stroke:#e94560,color:#fff
+    style EVALH fill:#16213e,stroke:#e94560,color:#fff
+    style CALC fill:#1a1a2e,stroke:#e94560,color:#fff
+    style GATE fill:#e94560,stroke:#fff,color:#fff
+```
+
 ### Docs
 
 | Section | Topic | Angle |
