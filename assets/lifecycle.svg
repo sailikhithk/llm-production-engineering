@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="100%" height="auto" role="img" aria-label="LLM Production Engineering lifecycle: cost tracking, eval-driven deployment, capacity planning, observability, incident response">
+  <style>
+    .label { font-family: -apple-system, Segoe UI, Helvetica, sans-serif; font-size: 13px; fill: #1a1a1a; }
+    .title { font-family: -apple-system, Segoe UI, Helvetica, sans-serif; font-size: 16px; font-weight: 600; fill: #0f172a; }
+    .small { font-family: -apple-system, Segoe UI, Helvetica, sans-serif; font-size: 11px; fill: #475569; }
+    @media (prefers-color-scheme: dark) {
+      .label { fill: #e2e8f0; }
+      .title { fill: #f1f5f9; }
+      .small { fill: #94a3b8; }
+    }
+  </style>
+
+  <text x="400" y="28" text-anchor="middle" class="title">LLM Production Engineering Lifecycle</text>
+  <text x="400" y="48" text-anchor="middle" class="small">7 years of field notes from Shell to Airbnb</text>
+
+  <!-- 5 stages in a circular flow -->
+  <!-- Stage 1: Cost Tracking (top) -->
+  <circle cx="400" cy="120" r="55" fill="#dbeafe" stroke="#3b82f6" stroke-width="2.5"/>
+  <text x="400" y="115" text-anchor="middle" class="label" font-weight="600">Cost</text>
+  <text x="400" y="132" text-anchor="middle" class="label" font-weight="600">Tracking</text>
+  <text x="400" y="148" text-anchor="middle" class="small">per-token, per-team</text>
+
+  <!-- Stage 2: Eval-Driven Deploy (right) -->
+  <circle cx="620" cy="220" r="55" fill="#dcfce7" stroke="#22c55e" stroke-width="2.5"/>
+  <text x="620" y="215" text-anchor="middle" class="label" font-weight="600">Eval-Driven</text>
+  <text x="620" y="232" text-anchor="middle" class="label" font-weight="600">Deploy</text>
+  <text x="620" y="248" text-anchor="middle" class="small">23+ versions</text>
+
+  <!-- Stage 3: Capacity Planning (bottom) -->
+  <circle cx="400" cy="320" r="55" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5"/>
+  <text x="400" y="315" text-anchor="middle" class="label" font-weight="600">Capacity</text>
+  <text x="400" y="332" text-anchor="middle" class="label" font-weight="600">Planning</text>
+  <text x="400" y="348" text-anchor="middle" class="small">GPU, preemption</text>
+
+  <!-- Stage 4: Observability (left) -->
+  <circle cx="180" cy="220" r="55" fill="#fce7f3" stroke="#ec4899" stroke-width="2.5"/>
+  <text x="180" y="215" text-anchor="middle" class="label" font-weight="600">Observability</text>
+  <text x="180" y="232" text-anchor="middle" class="small">OTel, drift</text>
+
+  <!-- Stage 5: Incident Response (center) -->
+  <circle cx="400" cy="220" r="40" fill="#fee2e2" stroke="#ef4444" stroke-width="2.5">
+    <animate attributeName="r" values="38;42;38" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="400" y="217" text-anchor="middle" class="label" font-weight="600" font-size="11">Incident</text>
+  <text x="400" y="232" text-anchor="middle" class="label" font-weight="600" font-size="11">Playbooks</text>
+
+  <!-- Animated flow arrows between stages (clockwise) -->
+  <g fill="none" stroke-width="2.5">
+    <!-- Cost -> Eval -->
+    <path d="M 450 150 Q 540 165 575 195" stroke="#3b82f6" opacity="0.6">
+      <animate attributeName="stroke-dasharray" values="0,100;50,50;100,0" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <!-- Eval -> Capacity -->
+    <path d="M 575 250 Q 540 290 450 295" stroke="#22c55e" opacity="0.6">
+      <animate attributeName="stroke-dasharray" values="0,100;50,50;100,0" dur="3s" begin="0.75s" repeatCount="indefinite"/>
+    </path>
+    <!-- Capacity -> Observability -->
+    <path d="M 345 295 Q 250 290 225 250" stroke="#f59e0b" opacity="0.6">
+      <animate attributeName="stroke-dasharray" values="0,100;50,50;100,0" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+    </path>
+    <!-- Observability -> Cost -->
+    <path d="M 225 190 Q 250 150 345 150" stroke="#ec4899" opacity="0.6">
+      <animate attributeName="stroke-dasharray" values="0,100;50,50;100,0" dur="3s" begin="2.25s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Pulsing data flow dots traveling along the cycle -->
+  <circle r="5" fill="#3b82f6">
+    <animateMotion dur="6s" repeatCount="indefinite" path="M 450 150 Q 540 165 575 195 Q 590 240 575 250 Q 540 290 450 295 Q 380 300 345 295 Q 250 290 225 250 Q 210 220 225 190 Q 250 150 345 150 Z"/>
+  </circle>
+  <circle r="4" fill="#22c55e">
+    <animateMotion dur="6s" begin="2s" repeatCount="indefinite" path="M 450 150 Q 540 165 575 195 Q 590 240 575 250 Q 540 290 450 295 Q 380 300 345 295 Q 250 290 225 250 Q 210 220 225 190 Q 250 150 345 150 Z"/>
+  </circle>
+
+  <!-- Metrics labels on edges -->
+  <text x="540" y="170" class="small">$ / token</text>
+  <text x="540" y="280" class="small">A/B test</text>
+  <text x="270" y="280" class="small">SLO breach</text>
+  <text x="270" y="170" class="small">drift alert</text>
+
+  <!-- Footer stats -->
+  <text x="400" y="395" text-anchor="middle" class="small">4M req/min Kafka - 1,690 eval samples - MTTR 45 -> 12 min - 30+ LLM providers</text>
+</svg>

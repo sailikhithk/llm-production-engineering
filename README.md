@@ -18,6 +18,10 @@ This is the repo I wish I had when I transitioned from traditional ML
 infrastructure into LLM serving in 2023. The lessons come from 7 years of
 production AI engineering, not from reading papers.
 
+<p align="center">
+  <img src="assets/lifecycle.svg" alt="LLM Production Engineering lifecycle: cost tracking, eval-driven deployment, capacity planning, observability, and incident playbooks" width="100%">
+</p>
+
 ## Who this is for
 
 ML infrastructure engineers, MLOps teams, and platform engineers who are
