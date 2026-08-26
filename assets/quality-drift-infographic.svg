@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f6f8fa"/>
+    </linearGradient>
+    <linearGradient id="signal1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0969da"/>
+      <stop offset="100%" stop-color="#0550ae"/>
+    </linearGradient>
+    <linearGradient id="signal2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#cf222e"/>
+      <stop offset="100%" stop-color="#a40e26"/>
+    </linearGradient>
+    <linearGradient id="signal3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1a7f37"/>
+      <stop offset="100%" stop-color="#0a6b2e"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1080" height="1350" fill="url(#bg)"/>
+
+  <!-- Header -->
+  <text x="540" y="90" font-family="SF Mono, Monaco, Consolas, monospace" font-size="22" fill="#57606a" text-anchor="middle" letter-spacing="3">LLM PRODUCTION ENGINEERING</text>
+  <text x="540" y="155" font-family="-apple-system, SF Pro Display, Helvetica, Arial, sans-serif" font-size="48" font-weight="700" fill="#1f2328" text-anchor="middle">Quality drift catches you late</text>
+  <text x="540" y="200" font-family="-apple-system, SF Pro Display, Helvetica, Arial, sans-serif" font-size="22" fill="#57606a" text-anchor="middle">3 signals that fire before users complain</text>
+
+  <!-- Divider -->
+  <line x1="140" y1="235" x2="940" y2="235" stroke="#d0d7de" stroke-width="1"/>
+
+  <!-- Timeline -->
+  <text x="140" y="285" font-family="SF Mono, Monaco, Consolas, monospace" font-size="16" fill="#57606a">TUE</text>
+  <text x="340" y="285" font-family="SF Mono, Monaco, Consolas, monospace" font-size="16" fill="#57606a">WED</text>
+  <text x="540" y="285" font-family="SF Mono, Monaco, Consolas, monospace" font-size="16" fill="#57606a">FRI</text>
+  <text x="740" y="285" font-family="SF Mono, Monaco, Consolas, monospace" font-size="16" fill="#57606a">+2 WEEKS</text>
+  <text x="940" y="285" font-family="SF Mono, Monaco, Consolas, monospace" font-size="16" fill="#cf222e" text-anchor="end">TOO LATE</text>
+  <rect x="140" y="300" width="800" height="4" fill="#eaeef2" rx="2"/>
+  <rect x="140" y="300" width="500" height="4" fill="#1a7f37" rx="2"/>
+  <rect x="640" y="300" width="300" height="4" fill="#cf222e" rx="2"/>
+
+  <!-- Signal 1: Golden set regression -->
+  <text x="140" y="370" font-family="SF Mono, Monaco, Consolas, monospace" font-size="14" fill="#0969da" font-weight="600">SIGNAL 1</text>
+  <text x="940" y="370" font-family="SF Mono, Monaco, Consolas, monospace" font-size="18" fill="#0969da" text-anchor="end" font-weight="600">catches @ TUE</text>
+  <text x="140" y="405" font-family="-apple-system, Helvetica, sans-serif" font-size="24" fill="#1f2328" font-weight="700">Golden set regression</text>
+  <text x="140" y="435" font-family="-apple-system, Helvetica, sans-serif" font-size="16" fill="#57606a">1,690 frozen samples, 23-version sweep</text>
+  <text x="140" y="460" font-family="-apple-system, Helvetica, sans-serif" font-size="16" fill="#57606a">F1 drops 0.654 to 0.581 = block ship</text>
+  <rect x="140" y="480" width="800" height="6" fill="#eaeef2" rx="3"/>
+  <rect x="140" y="480" width="80" height="6" fill="url(#signal1)" rx="3"/>
+
+  <!-- Signal 2: Distribution shift -->
+  <text x="140" y="555" font-family="SF Mono, Monaco, Consolas, monospace" font-size="14" fill="#cf222e" font-weight="600">SIGNAL 2</text>
+  <text x="940" y="555" font-family="SF Mono, Monaco, Consolas, monospace" font-size="18" fill="#cf222e" text-anchor="end" font-weight="600">catches @ WED</text>
+  <text x="140" y="590" font-family="-apple-system, Helvetica, sans-serif" font-size="24" fill="#1f2328" font-weight="700">LLM-as-Judge distribution shift</text>
+  <text x="140" y="620" font-family="-apple-system, Helvetica, sans-serif" font-size="16" fill="#57606a">mean holds at 0.82, p10 drops 0.65 to 0.40</text>
+  <text x="140" y="645" font-family="-apple-system, Helvetica, sans-serif" font-size="16" fill="#57606a">the tails move first, the mean lies</text>
+  <rect x="140" y="665" width="800" height="6" fill="#eaeef2" rx="3"/>
+  <rect x="140" y="665" width="160" height="6" fill="url(#signal2)" rx="3"/>
+
+  <!-- Mini distribution chart -->
+  <text x="140" y="710" font-family="SF Mono, Monaco, Consolas, monospace" font-size="13" fill="#57606a">BEFORE</text>
+  <text x="940" y="710" font-family="SF Mono, Monaco, Consolas, monospace" font-size="13" fill="#cf222e" text-anchor="end">AFTER</text>
+  <!-- Before distribution curve -->
+  <path d="M 140 780 Q 240 740, 340 760 Q 440 790, 540 775 Q 640 760, 740 780 Q 840 790, 940 785" stroke="#0969da" stroke-width="2" fill="none"/>
+  <!-- After distribution curve (shifted left tail) -->
+  <path d="M 140 795 Q 200 770, 260 790 Q 340 810, 440 790 Q 540 770, 640 775 Q 740 785, 840 788 Q 900 786, 940 785" stroke="#cf222e" stroke-width="2" fill="none" stroke-dasharray="6,3"/>
+  <!-- p10 markers -->
+  <line x1="220" y1="730" x2="220" y2="800" stroke="#0969da" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="220" y="725" font-family="SF Mono, Monaco, Consolas, monospace" font-size="11" fill="#0969da" text-anchor="middle">p10: 0.65</text>
+  <line x1="180" y1="730" x2="180" y2="800" stroke="#cf222e" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="180" y="725" font-family="SF Mono, Monaco, Consolas, monospace" font-size="11" fill="#cf222e" text-anchor="middle">p10: 0.40</text>
+
+  <!-- Signal 3: User frustration proxy -->
+  <text x="140" y="860" font-family="SF Mono, Monaco, Consolas, monospace" font-size="14" fill="#1a7f37" font-weight="600">SIGNAL 3</text>
+  <text x="940" y="860" font-family="SF Mono, Monaco, Consolas, monospace" font-size="18" fill="#1a7f37" text-anchor="end" font-weight="600">catches @ WED</text>
+  <text x="140" y="895" font-family="-apple-system, Helvetica, sans-serif" font-size="24" fill="#1f2328" font-weight="700">User frustration proxy</text>
+  <text x="140" y="925" font-family="-apple-system, Helvetica, sans-serif" font-size="16" fill="#57606a">regenerate clicks, thumbs-down, time-to-first-edit</text>
+  <text x="140" y="950" font-family="-apple-system, Helvetica, sans-serif" font-size="16" fill="#57606a">cheapest to build, nobody builds it</text>
+  <rect x="140" y="970" width="800" height="6" fill="#eaeef2" rx="3"/>
+  <rect x="140" y="970" width="160" height="6" fill="url(#signal3)" rx="3"/>
+
+  <!-- Regenerate rate spike -->
+  <text x="140" y="1015" font-family="SF Mono, Monaco, Consolas, monospace" font-size="13" fill="#57606a">REGENERATE RATE</text>
+  <rect x="140" y="1030" width="60" height="20" fill="#1a7f37" rx="2"/>
+  <text x="170" y="1045" font-family="SF Mono, Monaco, Consolas, monospace" font-size="11" fill="#fff" text-anchor="middle">4%</text>
+  <rect x="210" y="1030" width="60" height="20" fill="#1a7f37" rx="2"/>
+  <text x="240" y="1045" font-family="SF Mono, Monaco, Consolas, monospace" font-size="11" fill="#fff" text-anchor="middle">5%</text>
+  <rect x="280" y="1025" width="60" height="25" fill="#bf8700" rx="2"/>
+  <text x="310" y="1042" font-family="SF Mono, Monaco, Consolas, monospace" font-size="11" fill="#fff" text-anchor="middle">8%</text>
+  <rect x="350" y="1015" width="60" height="35" fill="#bc4c00" rx="2"/>
+  <text x="380" y="1037" font-family="SF Mono, Monaco, Consolas, monospace" font-size="11" fill="#fff" text-anchor="middle">14%</text>
+  <rect x="420" y="1005" width="60" height="45" fill="#cf222e" rx="2"/>
+  <text x="450" y="1032" font-family="SF Mono, Monaco, Consolas, monospace" font-size="11" fill="#fff" text-anchor="middle">19%</text>
+  <text x="140" y="1075" font-family="-apple-system, Helvetica, sans-serif" font-size="14" fill="#57606a">Tue  Wed  Thu  Fri  Mon  Tue</text>
+
+  <!-- Summary -->
+  <line x1="140" y1="1110" x2="940" y2="1110" stroke="#d0d7de" stroke-width="1"/>
+  <text x="140" y="1155" font-family="SF Mono, Monaco, Consolas, monospace" font-size="16" fill="#57606a" letter-spacing="2">WITHOUT SIGNALS</text>
+  <text x="940" y="1155" font-family="SF Mono, Monaco, Consolas, monospace" font-size="16" fill="#cf222e" text-anchor="end">detected @ +2 weeks</text>
+  <text x="140" y="1195" font-family="SF Mono, Monaco, Consolas, monospace" font-size="16" fill="#57606a" letter-spacing="2">WITH SIGNALS</text>
+  <text x="940" y="1195" font-family="SF Mono, Monaco, Consolas, monospace" font-size="16" fill="#1a7f37" text-anchor="end">detected @ +1 day</text>
+
+  <!-- Footer -->
+  <text x="540" y="1265" font-family="-apple-system, Helvetica, sans-serif" font-size="16" fill="#6e7781" text-anchor="middle">The tails move first. The mean lies.</text>
+  <text x="540" y="1295" font-family="SF Mono, Monaco, Consolas, monospace" font-size="13" fill="#8c959f" text-anchor="middle">github.com/sailikhithk/llm-production-engineering</text>
+  <text x="540" y="1325" font-family="-apple-system, Helvetica, sans-serif" font-size="14" fill="#8c959f" text-anchor="middle">Post 2 of 8 - LLM Production Engineering Field Notes</text>
+</svg>
