@@ -118,9 +118,9 @@ flowchart LR
 
 | Module | Purpose | Status |
 |--------|---------|--------|
-| [code/cost_tracker/](code/cost_tracker/) | OpenTelemetry-based per-token cost tracking reference impl | In progress |
-| [code/eval_harness/](code/eval_harness/) | Golden-set regression harness for LLM quality drift | Planned |
-| [code/capacity_calculator/](code/capacity_calculator/) | LLM serving sizing script (GPU count, KV cache budget) | Planned |
+| [code/cost_tracker/](code/cost_tracker/) | OpenTelemetry-based per-token cost tracking reference impl | **Complete (100% tests)** |
+| [code/capacity_calculator/](code/capacity_calculator/) | LLM serving sizing script (GPU count, KV cache budget) | **Complete (100% tests)** |
+| [code/eval_harness/](code/eval_harness/) | Golden-set regression harness for LLM quality drift | In progress |
 
 ### Case studies
 
