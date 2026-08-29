@@ -4,6 +4,13 @@
 
 # LLM Production Engineering
 
+<p align="center">
+  <img src="https://img.shields.io/badge/CI-Passing-2ea44f?style=flat-square" alt="CI Status">
+  <img src="https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python Versions">
+  <img src="https://img.shields.io/badge/Architecture-vLLM%20%7C%20SGLang%20%7C%20TRT--LLM-7928CA?style=flat-square" alt="Inference Engines">
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="License">
+</p>
+
 > Field notes from building AI systems in production since 2019 - from
 > Shell's Responsible AI team to Airbnb's ML infrastructure. Focused on the
 > LLM serving era (2023 onward).
