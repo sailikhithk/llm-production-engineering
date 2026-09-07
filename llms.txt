@@ -27,19 +27,23 @@ The gap this repo fills: there is plenty of content explaining how PagedAttentio
 
 ## Other AI/ML work by Sai Likhith Kanuparthi
 
+Brand focus: Production evals + medical + finance AI.
+
+- [eval-infra-for-agents](https://github.com/sailikhithk/eval-infra-for-agents) - Field guide to building production-grade evaluation infrastructure for LLM agent systems. Based on Airbnb BPI Virtual Analyst eval harness (23+ agent versions, 1,690 ground-truth samples).
 - [facadedriver](https://github.com/sailikhithk/facadedriver) - Model-agnostic orchestration for multi-LLM production systems: routing, retry, fallback, circuit breakers, per-request telemetry.
-- [mamba-from-scratch](https://github.com/sailikhithk/mamba-from-scratch) - From-scratch S4, Mamba-1 (S6), Mamba-2 (SSD) state-space models in pure PyTorch.
-- [Synthetic-AI-Image-Detector](https://github.com/sailikhithk/Synthetic-AI-Image-Detector) - Multi-signal deepfake detection with calibration, uncertainty quantification, and cross-generator eval.
+- [Synthetic-AI-Image-Detector](https://github.com/sailikhithk/Synthetic-AI-Image-Detector) - 6-signal AI image detection with calibration, uncertainty quantification, and cross-generator eval.
+- [lims-omi](https://github.com/sailikhithk/lims-omi) - 21 CFR Part 11 compliance collaboration platform for cross-hub laboratory task management. Electronic signatures, SLA tracking, audit trails.
 - [alzheimers-drug-discovery-demo](https://github.com/sailikhithk/alzheimers-drug-discovery-demo) - QSAR machine learning for Alzheimer's drug discovery: predict bioactivity against Beta-amyloid A4 protein.
-- [Project-X](https://github.com/sailikhithk/Project-X) - AI-based video interview platform with automated analysis.
-- [Tags-recommender-system-for-community-forums](https://github.com/sailikhithk/Tags-recommender-system-for-community-forums) - NLP multi-label tag recommender with TF-IDF, neural networks, and active learning.
 - [CreditCardFraudDetectionUsingKafka](https://github.com/sailikhithk/CreditCardFraudDetectionUsingKafka) - Real-time fraud detection with Kafka, Spark EMR, and AWS Lambda.
+- [mamba-from-scratch](https://github.com/sailikhithk/mamba-from-scratch) - From-scratch S4, Mamba-1 (S6), Mamba-2 (SSD) state-space models in pure PyTorch.
 
 ## Author
 
 Sai Likhith Kanuparthi - Senior AI Infrastructure & Systems Engineer.
 7+ years shipping production AI systems at Airbnb, Southwest Airlines, Shell,
 Eli Lilly, and Oracle. MS Computer Science from NYU.
+
+Brand: Production evals + medical + finance AI.
 
 - GitHub: https://github.com/sailikhithk
 - LinkedIn: https://www.linkedin.com/in/sailikhithk
